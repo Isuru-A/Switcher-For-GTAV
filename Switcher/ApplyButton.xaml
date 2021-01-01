@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="Switcher.ApplyButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Switcher"
+             mc:Ignorable="d" Height="359.345" Width="668.932">
+    
+    <Viewbox Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid HorizontalAlignment="Center" Height="100" Margin="0" VerticalAlignment="Center" Width="200">
+                <Rectangle Fill="#FF646464" HorizontalAlignment="Center" Height="80" Margin="0" RadiusY="42.5" RadiusX="42.5" VerticalAlignment="Center" Width="180"/>
+                <TextBlock x:Name="TextOut" HorizontalAlignment="Center" Height="50" Margin="0" TextWrapping="Wrap" Text="Apply" VerticalAlignment="Center" Width="104.854" FontSize="36" FontFamily="Century Gothic" FontWeight="Bold" Foreground="White" RenderTransformOrigin="1.073,-0.175"/>
+            </Grid>
+        </Viewbox>
+</UserControl>
