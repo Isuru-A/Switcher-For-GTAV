@@ -5,28 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Switcher"
         mc:Ignorable="d"
-        Title="SwitcherSettings" Height="450" Width="750" Foreground="{x:Null}" Background="#FF151515" Closing="Window_Closing">
+        Title="SwitcherSettings" Height="450" Width="750" Foreground="{x:Null}" Background="#FF151515" Closing="Window_Closing" WindowStyle="None" ResizeMode="NoResize">
     <Grid x:Name="Main">
-        <Grid HorizontalAlignment="Left" Height="100" Margin="10,140.334,0,0" VerticalAlignment="Top" Width="722">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="10,178.334,0,0" VerticalAlignment="Top" Width="722">
             <Label Content="Modded Installation Path" HorizontalAlignment="Left" Height="30" Margin="5,5,0,0" VerticalAlignment="Top" Width="191.333" FontFamily="Century Gothic" FontWeight="Bold" Background="{x:Null}" Foreground="White" FontSize="15"/>
             <Border BorderBrush="#FF646464" BorderThickness="3" HorizontalAlignment="Left" Height="35" Margin="10,35,0,0" VerticalAlignment="Top" Width="550" CornerRadius="17.5" Background="#FF323232">
                 <TextBox x:Name="TextModdedPath" IsReadOnly ="true" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Modded Install path" VerticalAlignment="Center" Width="450" Margin="10,4.5,0,4.5" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF969696"/>
             </Border>
             <local:BrowseButton x:Name="BrowseModded" HorizontalAlignment="Left" Height="89.25" Margin="488.668,7.668,0,-16.918" VerticalAlignment="Top" Width="81.75" MouseLeftButtonDown="BrowseModded_MouseLeftButtonDown"/>
-            <TextBox x:Name="PathStatusModded" HorizontalAlignment="Left" Height="20" Margin="10,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" FontWeight="Bold" Background="{x:Null}" BorderBrush="{x:Null}"/>
+            <TextBox x:Name="PathStatusModded" HorizontalAlignment="Left" Height="20" Margin="6.868,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" FontWeight="Bold" Background="{x:Null}" BorderBrush="{x:Null}"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" Margin="10,29.333,0,0" VerticalAlignment="Top" Width="722">
+        <Grid HorizontalAlignment="Left" Height="100" Margin="10,67.333,0,0" VerticalAlignment="Top" Width="722">
             <Label Content="Clean Installation Path" HorizontalAlignment="Left" Height="30" Margin="5,5,0,0" VerticalAlignment="Top" Width="172" FontFamily="Century Gothic" FontWeight="Bold" Background="{x:Null}" Foreground="White" FontSize="15"/>
             <Border BorderBrush="#FF646464" BorderThickness="3" HorizontalAlignment="Left" Height="35" Margin="10,35,0,0" VerticalAlignment="Top" Width="550" CornerRadius="17.5" Background="#FF323232">
                 <TextBox x:Name="TextCleanPath" IsReadOnly ="true" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="Clean Install Path" VerticalAlignment="Center" Width="450" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF787878" Margin="10,4.5,0,4.5"/>
             </Border>
             <local:BrowseButton x:Name="BrowseClean" HorizontalAlignment="Left" Height="89.25" Margin="488.668,7.668,0,-16.918" VerticalAlignment="Top" Width="81.75" MouseLeftButtonDown="BrowseClean_MouseLeftButtonDown"/>
-            <TextBox x:Name="PathStatusClean" IsReadOnly ="true" HorizontalAlignment="Left" Height="20" Margin="10,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" FontWeight="Bold" Background="{x:Null}" BorderBrush="{x:Null}"/>
+            <TextBox x:Name="PathStatusClean" IsReadOnly ="true" HorizontalAlignment="Left" Height="20" Margin="6.868,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" FontWeight="Bold" Background="{x:Null}" BorderBrush="{x:Null}"/>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="162" Margin="10,250.334,0,0" VerticalAlignment="Top" Width="603.667">
-            <Label Content="Resync" HorizontalAlignment="Left" Height="30" Margin="34.002,75.325,0,0" VerticalAlignment="Top" Width="65" FontFamily="Century Gothic" FontWeight="Bold" Background="{x:Null}" Foreground="White" FontSize="15"/>
-            <local:SwitchButton x:Name="ResyncButton" HorizontalAlignment="Left" Height="20" Margin="14.002,78.66,0,0" VerticalAlignment="Top" Width="20" MouseLeftButtonDown="ResyncButton_MouseLeftButtonDown"/>
-            <Label Content="Resyncing Will Sync Manifest With Launcher And Switch To Clean Install" HorizontalAlignment="Left" Height="27.006" Margin="34.002,98.66,0,0" VerticalAlignment="Top" Width="419.333" Foreground="#FFFFC800" FontWeight="Bold"/>
+        <Grid HorizontalAlignment="Left" Height="162" Margin="10,288.334,0,-0.334" VerticalAlignment="Top" Width="603.667">
+            <Label Content="Resync" HorizontalAlignment="Left" Height="30" Margin="34.002,85.325,0,0" VerticalAlignment="Top" Width="65" FontFamily="Century Gothic" FontWeight="Bold" Background="{x:Null}" Foreground="#FF00C788" FontSize="15"/>
+            <local:SwitchButton x:Name="ResyncButton" HorizontalAlignment="Left" Height="20" Margin="14.002,88.66,0,0" VerticalAlignment="Top" Width="20" MouseLeftButtonDown="ResyncButton_MouseLeftButtonDown"/>
+            <Label Content="Resyncing Will Sync Manifest With Launcher And Switch To Unmodded Install" HorizontalAlignment="Left" Height="27.006" Margin="34.002,108.66,0,0" VerticalAlignment="Top" Width="449.611" Foreground="#FFFFC800" FontWeight="Bold"/>
             <Label Content="Epic Games" HorizontalAlignment="Left" Height="30" Margin="34.002,35.998,0,0" VerticalAlignment="Top" Width="99.333" FontFamily="Century Gothic" FontWeight="Bold" Background="{x:Null}" Foreground="White" FontSize="15"/>
             <Label Content="Steam" HorizontalAlignment="Left" Height="30" Margin="173.835,35.998,0,0" VerticalAlignment="Top" Width="56" FontFamily="Century Gothic" FontWeight="Bold" Background="{x:Null}" Foreground="White" FontSize="15"/>
             <Border BorderBrush="#FF646464" BorderThickness="3" HorizontalAlignment="Left" Height="35" Margin="249.669,32.282,0,0" VerticalAlignment="Top" Width="310" CornerRadius="17.5" Background="#FF323232">
@@ -36,6 +36,11 @@
             <local:SwitchButton x:Name="SteamButton" HorizontalAlignment="Left" Height="20" Margin="153.835,40,0,0" VerticalAlignment="Top" Width="20" MouseLeftButtonDown="SteamButton_MouseLeftButtonDown"/>
             <local:BrowseButton x:Name="BrowseLauncher" HorizontalAlignment="Left" Height="89.25" Margin="488,5.166,0,0" VerticalAlignment="Top" Width="81.75" MouseLeftButtonDown="BrowseLauncher_MouseLeftButtonDown"/>
         </Grid>
-        <local:ApplyButton HorizontalAlignment="Left" Height="60" Margin="618.667,335.001,0,0" VerticalAlignment="Top" Width="92.666" RenderTransformOrigin="0.08,0.093" MouseLeftButtonDown="ApplyButton_MouseLeftButtonDown"/>
+        <local:ApplyButton HorizontalAlignment="Left" Height="60" Margin="618.667,376.001,0,0" VerticalAlignment="Top" Width="92.666" RenderTransformOrigin="0.08,0.093" MouseLeftButtonDown="ApplyButton_MouseLeftButtonDown"/>
+        <Grid HorizontalAlignment="Left" Height="70.666" VerticalAlignment="Top" Width="730" Margin="10,10,0,0">
+            <Rectangle x:Name="Header" Fill="#FF323232" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="710" RadiusX="20" RadiusY="20" Margin="10,10,0,0" MouseLeftButtonDown="Header_MouseLeftButtonDown"/>
+            <Label Content="Settings" HorizontalAlignment="Left" Height="35" Margin="25.917,13,0,0" VerticalAlignment="Top" Width="85.5" FontFamily="Century Gothic" FontSize="20" FontWeight="Bold" RenderTransformOrigin="0.96,1.083" Foreground="#FF646464"/>
+            <local:ControlSet x:Name="CloseButton" HorizontalAlignment="Left" Height="45" Margin="617,8,0,0" VerticalAlignment="Top" Width="100" MouseLeftButtonDown="CloseButton_MouseLeftButtonDown"/>
+        </Grid>
     </Grid>
 </Window>

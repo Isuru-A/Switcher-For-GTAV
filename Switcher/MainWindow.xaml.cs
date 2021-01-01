@@ -52,7 +52,8 @@ namespace Switcher
             }
             catch (Exception)
             {
-                Console.WriteLine("Something Went Wrong");
+                //Console.WriteLine("Something Went Wrong");
+                MessageBox.Show("An unknown issue occured, and Switcher was not able to resolve it!", "Something Went Wrong");
                 throw;
             }
             
@@ -99,45 +100,58 @@ namespace Switcher
         //Updates Status Output With Relevant Information
         private void updateStatus()
         {
-            if (SwitcherCore.LauncherSelect == "EpicGames")
+            var localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            var localPath = System.IO.Path.Combine(localAppDataPath, @"Switcher");
+
+            if (!(System.IO.File.Exists(System.IO.Path.Combine(localPath, "settings.xml"))) || !(System.IO.File.Exists(System.IO.Path.Combine(localPath, "launcher.xml"))))
             {
-                if (!(System.IO.File.Exists(SwitcherCore.ManifestLocation)))
-                {
-                    SwitcherStatusTitle.Text = "Unable To Locate Files";
-                    SwitcherStatusTitle.Foreground = textColorModded;
-                    SwitcherStatusBody.Text = "Please Define Install Paths In Settings Before Using Switcher";
-                    SwitcherStatusBody.Foreground = textColorDefault;
-                }
-                else if (SwitcherCheck.SyncError)
-                {
-                    SwitcherStatusTitle.Text = "Manifest Is Not Synced With Launcher";
-                    SwitcherStatusTitle.Foreground = textColorWarning;
-                    SwitcherStatusBody.Text = "Please Resync Manifest And Launcher In Settings Before Using Switcher";
-                    SwitcherStatusBody.Foreground = textColorDefault;
-                }
-                else if (!SwitcherCheck.SyncError && (System.IO.File.Exists(SwitcherCore.ManifestLocation)) && (System.IO.File.Exists(SwitcherCore.LauncherInstalledLocation)))
-                {
-                    SwitcherStatusTitle.Text = "Switcher Is Ready To Use";
-                    SwitcherStatusTitle.Foreground = textColorUnmodded;
-                    SwitcherStatusBody.Text = "Restart launcher after changing installs";
-                    SwitcherStatusBody.Foreground = textColorDefault;
-                }
-                else
-                {
-                    SwitcherStatusTitle.Text = "Something Went Wrong";
-                    SwitcherStatusTitle.Foreground = textColorModded;
-                    SwitcherStatusBody.Text = "Switcher Does Not Know What Went Wrong. Please Try Reinstalling Switcher Or Restarting Launcher";
-                    SwitcherStatusBody.Foreground = textColorDefault;
-                }
-            }
-            else if (SwitcherCore.LauncherSelect == "Steam")
-            {
-                SwitcherStatusTitle.Text = "Unsupported Launcher";
+                SwitcherStatusTitle.Text = "Settings File(s) Not Found";
                 SwitcherStatusTitle.Foreground = textColorModded;
-                SwitcherStatusBody.Text = "Steam is currently not supported by switcher";
+                SwitcherStatusBody.Text = "Please Setup Switcher Using Settings (...)";
                 SwitcherStatusBody.Foreground = textColorDefault;
             }
-            
+            else
+            {
+                if (SwitcherCore.LauncherSelect == "EpicGames")
+                {
+                    if (!(System.IO.File.Exists(SwitcherCore.ManifestLocation)))
+                    {
+                        SwitcherStatusTitle.Text = "Unable To Locate Files";
+                        SwitcherStatusTitle.Foreground = textColorModded;
+                        SwitcherStatusBody.Text = "Please Define Install Paths In Settings Before Using Switcher";
+                        SwitcherStatusBody.Foreground = textColorDefault;
+                    }
+                    else if (SwitcherCheck.SyncError)
+                    {
+                        SwitcherStatusTitle.Text = "Manifest Is Not Synced With Launcher";
+                        SwitcherStatusTitle.Foreground = textColorWarning;
+                        SwitcherStatusBody.Text = "Please Resync Manifest And Launcher In Settings Before Using Switcher";
+                        SwitcherStatusBody.Foreground = textColorDefault;
+                    }
+                    else if (!SwitcherCheck.SyncError && (System.IO.File.Exists(SwitcherCore.ManifestLocation)) && (System.IO.File.Exists(SwitcherCore.LauncherInstalledLocation)))
+                    {
+                        SwitcherStatusTitle.Text = "Switcher Is Ready To Use";
+                        SwitcherStatusTitle.Foreground = textColorUnmodded;
+                        SwitcherStatusBody.Text = "Restart launcher after changing installs";
+                        SwitcherStatusBody.Foreground = textColorDefault;
+                    }
+                    else
+                    {
+                        SwitcherStatusTitle.Text = "Something Went Wrong";
+                        SwitcherStatusTitle.Foreground = textColorModded;
+                        SwitcherStatusBody.Text = "Switcher Does Not Know What Went Wrong. Please Try Reinstalling Switcher Or Restarting Launcher";
+                        SwitcherStatusBody.Foreground = textColorDefault;
+                    }
+                }
+                else if (SwitcherCore.LauncherSelect == "Steam")
+                {
+                    SwitcherStatusTitle.Text = "Unsupported Launcher";
+                    SwitcherStatusTitle.Foreground = textColorModded;
+                    SwitcherStatusBody.Text = "Steam is currently not supported by switcher";
+                    SwitcherStatusBody.Foreground = textColorDefault;
+                }
+            }
+
         }
 
         private void ControlSet_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -204,24 +218,37 @@ namespace Switcher
             //Restarts Selected Launcher
             string launcher = "name";
 
-            if (SwitcherCore.LauncherSelect == "EpicGames")
+            if (System.IO.File.Exists(SwitcherCore.LauncherLocation))
             {
-                launcher = "EpicGamesLauncher";
-            }
-            else if (SwitcherCore.LauncherSelect == "Steam")
-            {
-                launcher = "Steam";
-            }
+                if (SwitcherCore.LauncherSelect == "EpicGames")
+                {
+                    launcher = "EpicGamesLauncher";
+                }
+                else if (SwitcherCore.LauncherSelect == "Steam")
+                {
+                    launcher = "Steam";
+                }
 
-            Process[] processes = Process.GetProcessesByName(launcher);
+                Process[] processes = Process.GetProcessesByName(launcher);
+
+                foreach (var process in processes)
+                {
+                    process.Kill();
+                    process.WaitForExit();
+                }
+
+                Process.Start(SwitcherCore.LauncherLocation);
+            }
+            else
+            {
+                MessageBox.Show("Unable to find launcher. Please ensure correct launcher path is defined in settings", "Something Went Wrong");
+            }
             
-            foreach (var process in processes)
-            {
-                process.Kill();
-                process.WaitForExit();
-            }
+        }
 
-            Process.Start(SwitcherCore.LauncherLocation);
+        private void Header_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
     } 
 }

@@ -22,10 +22,10 @@ namespace Switcher
     /// </summary>
     public partial class SwitcherSettings : Window
     {
-        private static string inputUnmodded = "path";
-        private static string inputModded = "path";
+        private static string inputUnmodded = "Path To Clean Install";
+        private static string inputModded = "Path To Modded Install";
         private static string inputLauncher = "EpicGames";
-        private static string inputLauncherPath = "path";
+        private static string inputLauncherPath = "Path To Launcher";
 
         SolidColorBrush textColorValid = new SolidColorBrush(Color.FromRgb(0, 200, 0));
         SolidColorBrush textColorInvalid = new SolidColorBrush(Color.FromRgb(200, 0, 0));
@@ -433,6 +433,16 @@ namespace Switcher
                 ResyncButton.Button.Fill = ResyncButton.buttonOffFill;
                 ResyncButton.ButtonOn = false;
             }
+        }
+
+        private void CloseButton_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Header_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
     }
 }

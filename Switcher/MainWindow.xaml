@@ -11,6 +11,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <Rectangle x:Name="Header" Fill="#FF323232" HorizontalAlignment="Left" Height="41" VerticalAlignment="Top" Width="334" RadiusY="20" RadiusX="20" MouseLeftButtonDown="Header_MouseLeftButtonDown"/>
         <Grid HorizontalAlignment="Left" Height="74" Margin="0,311.019,0,0" VerticalAlignment="Top" Width="330">
             <Rectangle Fill="#FF323232" HorizontalAlignment="Left" Height="54" Margin="10,10,0,0" VerticalAlignment="Top" Width="310" RadiusX="26" RadiusY="26" Stroke="#FF646464" StrokeThickness="3"/>
             <TextBlock HorizontalAlignment="Left" Height="25.333" Margin="13.33,23.335,0,0" TextWrapping="Wrap" Text="Change Install" VerticalAlignment="Top" Width="171.333" FontFamily="Century Gothic" FontWeight="Bold" FontSize="20" TextAlignment="Center" Foreground="#FF00C788"/>
@@ -21,7 +22,7 @@
             <TextBlock x:Name="textInstallStatus" HorizontalAlignment="Center" Height="25.333" Margin="0" TextWrapping="Wrap" Text="Modded" VerticalAlignment="Center" Width="171.333" FontFamily="Century Gothic" FontWeight="Bold" FontSize="20" TextAlignment="Center" Foreground="#FFC80000"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="82.352" VerticalAlignment="Top" Width="330">
-            <local:RestartLauncher HorizontalAlignment="Center" Height="45.75" Margin="3.742,36.453,191.472,0.149" VerticalAlignment="Center" Width="134.786" RenderTransformOrigin="0.5,0.5" MouseLeftButtonDown="RestartLauncher_MouseLeftButtonDown">
+            <local:RestartLauncher HorizontalAlignment="Center" Height="45.75" Margin="3.742,38.953,191.472,-2.351" VerticalAlignment="Center" Width="134.786" RenderTransformOrigin="0.5,0.5" MouseLeftButtonDown="RestartLauncher_MouseLeftButtonDown">
                 <local:RestartLauncher.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -31,8 +32,8 @@
                     </TransformGroup>
                 </local:RestartLauncher.RenderTransform>
             </local:RestartLauncher>
-            <local:BrowseButton x:Name="SettingsButton" HorizontalAlignment="Center" Height="53" Margin="-9.471,-3.824,247.721,33.176" VerticalAlignment="Center" Width="91.75" MouseLeftButtonDown="SettingsButton_MouseLeftButtonDown" RenderTransformOrigin="0.75,0.444"/>
-            <local:ControlSet HorizontalAlignment="Left" Height="45" Margin="230,0,0,0" VerticalAlignment="Top" Width="100" MouseLeftButtonDown="ControlSet_MouseLeftButtonDown"/>
+            <local:BrowseButton x:Name="SettingsButton" HorizontalAlignment="Center" Height="53" Margin="-9.471,-5.824,247.721,35.176" VerticalAlignment="Center" Width="91.75" MouseLeftButtonDown="SettingsButton_MouseLeftButtonDown" RenderTransformOrigin="0.75,0.444"/>
+            <local:ControlSet HorizontalAlignment="Left" Height="45" Margin="230,-2,0,0" VerticalAlignment="Top" Width="100" MouseLeftButtonDown="ControlSet_MouseLeftButtonDown"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="218.667" Margin="0,87.352,0,0" VerticalAlignment="Top" Width="330">
             <Rectangle Fill="#FF191919" HorizontalAlignment="Left" Height="150" Margin="10,16.667,0,0" Stroke="#FF646464" VerticalAlignment="Top" Width="310" RadiusX="26" RadiusY="26" StrokeThickness="3"/>
