@@ -91,48 +91,45 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ApplyButton.xaml.cs">
+    <Compile Include="Controls\ApplyButton.xaml.cs">
       <DependentUpon>ApplyButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BrowseButton.xaml.cs">
+    <Compile Include="Controls\BrowseButton.xaml.cs">
       <DependentUpon>BrowseButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ControlSet.xaml.cs">
+    <Compile Include="Controls\ControlSet.xaml.cs">
       <DependentUpon>ControlSet.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RestartLauncher.xaml.cs">
+    <Compile Include="Controls\RestartLauncher.xaml.cs">
       <DependentUpon>RestartLauncher.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SettingsButton.xaml.cs">
-      <DependentUpon>SettingsButton.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SwitchButton.xaml.cs">
+    <Compile Include="Controls\SwitchButton.xaml.cs">
       <DependentUpon>SwitchButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SwitcherCheck.cs" />
-    <Compile Include="SwitcherCore.cs" />
+    <Compile Include="Core\SwitcherCheck.cs" />
+    <Compile Include="Core\SwitcherCore.cs" />
     <Compile Include="SwitcherSettings.xaml.cs">
       <DependentUpon>SwitcherSettings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ToggleSwitch.xaml.cs">
+    <Compile Include="Controls\ToggleSwitch.xaml.cs">
       <DependentUpon>ToggleSwitch.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ApplyButton.xaml">
+    <Page Include="Controls\ApplyButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BrowseButton.xaml">
+    <Page Include="Controls\BrowseButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ControlSet.xaml">
+    <Page Include="Controls\ControlSet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -140,15 +137,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="RestartLauncher.xaml">
+    <Page Include="Controls\RestartLauncher.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SettingsButton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SwitchButton.xaml">
+    <Page Include="Controls\SwitchButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -156,7 +149,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ToggleSwitch.xaml">
+    <Page Include="Controls\ToggleSwitch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -180,18 +173,13 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.manifest" />
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Switcher_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\settings.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

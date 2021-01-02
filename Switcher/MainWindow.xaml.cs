@@ -132,7 +132,7 @@ namespace Switcher
                     {
                         SwitcherStatusTitle.Text = "Switcher Is Ready To Use";
                         SwitcherStatusTitle.Foreground = textColorUnmodded;
-                        SwitcherStatusBody.Text = "Restart launcher after changing installs";
+                        SwitcherStatusBody.Text = "Restart Launcher After Changing Installs";
                         SwitcherStatusBody.Foreground = textColorDefault;
                     }
                     else
@@ -147,7 +147,7 @@ namespace Switcher
                 {
                     SwitcherStatusTitle.Text = "Unsupported Launcher";
                     SwitcherStatusTitle.Foreground = textColorModded;
-                    SwitcherStatusBody.Text = "Steam is currently not supported by switcher";
+                    SwitcherStatusBody.Text = "Steam Is Currently Not Supported By Switcher";
                     SwitcherStatusBody.Foreground = textColorDefault;
                 }
             }
